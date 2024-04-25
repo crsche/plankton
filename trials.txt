@@ -1,0 +1,9 @@
+trial 1 - ok 1/28/23 - 5814 sites
+trial 2 - network closed errs 1/28/23 - 5814 (MOST LIKELY BAD) sites
+trial 3 - network closed errs 1/28/23 - 3896 (MOST LIKELY BAD) sites
+trial 4 - network closed errs 1/28/23 - 135 (MOST LIKELy BAD) sites
+trial 5 - network closed errs 1/28/23 - 774 (MOST LIKElY BAD) sites
+trial 6 - network closed errs 1/28/23 - 2281 (MOST LIKELY BAD) sites
+trial 7 - network closed errs 1/29/23 - 3936 (MOST LIKELY BAD) sites
+trial 8 - network closed errs 1/29/23 - 860 (MOST LIKELY BAD) sites
+trial 9 - network closed errs 1/29/23 - 3171 (MOST LIKELY BAD) sites

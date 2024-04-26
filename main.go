@@ -105,7 +105,7 @@ func main() {
 	flag.IntVar(&maxTabs, "tabs", 4, "Number of concurrent tabs")
 	flag.IntVar(&loadTimeout, "timeout", 15000, "Page load timeout in milliseconds")
 	// flag.IntVar(&idleTime, "idle", 1000, "Maximum idle time between network requests in milliseconds")
-	flag.StringVar(&dbName, "db", "plankton", "Name of the database to use")
+	flag.StringVar(&dbName, "dbname", "plankton", "Name of the database to use")
 	flag.StringVar(&collectionName, "trials", "sites", "Name of the collection to use")
 	flag.StringVar(&dbURI, "db", "mongodb://localhost:27017", "URI of the MongoDB instance")
 	flag.StringVar(&logLevel, "ll", "info", "Log level to use")

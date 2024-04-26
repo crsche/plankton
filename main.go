@@ -90,6 +90,7 @@ var (
 	resRetries   int
 	intervalMins int
 
+	dbURI          string
 	dbName         string
 	collectionName string
 
@@ -106,6 +107,7 @@ func main() {
 	// flag.IntVar(&idleTime, "idle", 1000, "Maximum idle time between network requests in milliseconds")
 	flag.StringVar(&dbName, "db", "plankton", "Name of the database to use")
 	flag.StringVar(&collectionName, "trials", "sites", "Name of the collection to use")
+	flag.StringVar(&dbURI, "db", "mongodb://localhost:27017", "URI of the MongoDB instance")
 	flag.StringVar(&logLevel, "ll", "info", "Log level to use")
 	flag.IntVar(&resRetries, "rr", 1, "Number of times the browser attempts to retry failed responses")
 	flag.IntVar(&intervalMins, "interval", 0, "Interval between trials in minutes")
@@ -156,7 +158,11 @@ func main() {
 	if e != nil {
 		LOG.Panicf("Client couldn't connect to the DB: %v", e)
 	}
-	collection := dbClient.Database(dbName).Collection(collectionName)
+	client, e := mongo.Connect(context.TODO(), options.Client().ApplyURI(dbURI))
+	if e != nil {
+		LOG.Panicf("failed to connect to MongoDB: %v", e)
+	}
+	collection := client.Database(dbName).Collection(collectionName)
 	LOG.Infof("Connected to `%s` collection on `%s` DB", dbName, collectionName)
 
 	//! Init DNS client
